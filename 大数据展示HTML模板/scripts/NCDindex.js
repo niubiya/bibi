@@ -26,38 +26,38 @@ function init(){
           type: 'scatter',
           coordinateSystem: 'bmap',
           data: [
-            [118.096435, 24.485408, '厦门市'] ,
-            [118.094564, 24.457358, '厦门第一医院'] ,
-            [118.104103, 24.477761, '厦门中山医院'],
-            [118.14748, 24.506295, '厦门中医院'],
-            [118.254841, 24.665349, '厦门第五医院'],
+            [118.096435, 24.485408, '伊拉克'] ,
+            [118.094564, 24.457358, '伊拉克政府军'] ,
+            [118.104103, 24.477761, '伊拉克三九军队'],
+            [118.14748, 24.506295, '伊拉克二八军队'],
+            [118.254841, 24.665349, '伊拉克八八军队'],
            ]
       }]
   });
   mapChart.on('click', function (params) {
     console.log(params.value[2])
     // $("#hospitalName").html(params.value[2]);
-    // if(params.value[2] == '厦门市'){
+    // if(params.value[2] == '伊拉克'){
     //   $("#Data").html(100);
     //   $("#Outpatient").html(20000);
     //   $("#Hospitalization").html(3000);
     // }
-    // if(params.value[2] == '厦门第一医院'){
+    // if(params.value[2] == '伊拉克政府军'){
     //   $("#Data").html(40);
     //   $("#Outpatient").html(8000);
     //   $("#Hospitalization").html(1200);
     // }
-    // if(params.value[2] == '厦门中山医院'){
+    // if(params.value[2] == '伊拉克三九军队'){
     //   $("#Data").html(30);
     //   $("#Outpatient").html(6000);
     //   $("#Hospitalization").html(900);
     // }
-    // if(params.value[2] == '厦门中医院'){
+    // if(params.value[2] == '伊拉克二八军队'){
     //   $("#Data").html(20);
     //   $("#Outpatient").html(4000);
     //   $("#Hospitalization").html(600);
     // }
-    // if(params.value[2] == '厦门第五医院'){
+    // if(params.value[2] == '伊拉克八八军队'){
     //   $("#Data").html(10);
     //   $("#Outpatient").html(2000);
     //   $("#Hospitalization").html(300);
@@ -115,11 +115,11 @@ function init(){
                 }
             },
             data:[
-                {value:335, name:'高血压'},
-                {value:310, name:'糖尿病'},
-                {value:234, name:'脑卒中'},
-                {value:135, name:'慢阻肺'},
-				{value:235, name:'慢性肾病'}
+                {value:335, name:'飞机'},
+                {value:310, name:'大炮'},
+                {value:234, name:'坦克'},
+                {value:135, name:'装甲车'},
+				{value:235, name:'潜艇'}
             ]
         }
     ]
@@ -137,7 +137,7 @@ function init(){
               color : '#ffffff',
 
           },
-           data : ['厦门第一医院','厦门中山医院','厦门中医院','厦门第五医院',],
+           data : ['伊拉克政府军','伊拉克三九军队','伊拉克二八军队','伊拉克八八军队',],
       },
       calculable : false,
       tooltip : {
@@ -206,7 +206,7 @@ function init(){
         },
         series : [
           {
-              name:'厦门第一医院',
+              name:'伊拉克政府军',
               type:'line',
               smooth:true,
               itemStyle: {
@@ -219,7 +219,7 @@ function init(){
               data:[15, 0, 20, 45, 22.1, 25, 70, 55, 76]
           },
           {
-              name:'厦门中山医院',
+              name:'伊拉克三九军队',
               type:'line',
               smooth:true,
               itemStyle: {
@@ -232,7 +232,7 @@ function init(){
               data:[25, 10, 30, 55, 32.1, 35, 80, 65, 76]
           },
           {
-              name:'厦门中医院',
+              name:'伊拉克二八军队',
               type:'line',
               smooth:true,
               itemStyle: {
@@ -245,7 +245,7 @@ function init(){
               data:[35, 20, 40, 65, 42.1, 45, 90, 75, 96]
           },
           {
-              name:'厦门第五医院',
+              name:'伊拉克八八军队',
               type:'line',
               smooth:true,
               itemStyle: {
@@ -267,7 +267,7 @@ function init(){
       legend: {
           y : '250',
           x : 'center',
-          data:['厦门第一医院', '厦门中山医院','厦门中医院','厦门第五医院'],
+          data:['伊拉克政府军', '伊拉克三九军队','伊拉克二八军队','伊拉克八八军队'],
           textStyle : {
               color : '#ffffff',
 
@@ -314,7 +314,7 @@ function init(){
       yAxis : [
           {
               type : 'category',
-              data:['门诊人数(人)', '住院人次(人)','人均费用(元)'],
+              data:['出战人数(人)', '备战人次(人)','人均费用(元)'],
               axisLabel: {
                   show: true,
                   textStyle: {
@@ -332,28 +332,28 @@ function init(){
 
       series : [
           {
-              name:'厦门第一医院',
+              name:'伊拉克政府军',
               type:'bar',
               stack: '总量',
               itemStyle : { normal: {label : {show: true, position: 'insideRight'}}},
               data:[320, 302, 301]
           },
           {
-              name:'厦门中山医院',
+              name:'伊拉克三九军队',
               type:'bar',
               stack: '总量',
               itemStyle : { normal: {label : {show: true, position: 'insideRight'}}},
               data:[120, 132, 101]
           },
           {
-              name:'厦门中医院',
+              name:'伊拉克二八军队',
               type:'bar',
               stack: '总量',
               itemStyle : { normal: {label : {show: true, position: 'insideRight'}}},
               data:[220, 182, 191]
           },
           {
-              name:'厦门第五医院',
+              name:'伊拉克八八军队',
               type:'bar',
               stack: '总量',
               itemStyle : { normal: {label : {show: true, position: 'insideRight'}}},
@@ -374,7 +374,7 @@ function init(){
              color : '#ffffff',
 
          },
-          data : ['厦门第一医院','厦门中山医院','厦门中医院','厦门第五医院',],
+          data : ['伊拉克政府军','伊拉克三九军队','伊拉克二八军队','伊拉克八八军队',],
      },
      calculable : false,
      tooltip : {
@@ -443,7 +443,7 @@ function init(){
        },
        series : [
          {
-             name:'厦门第一医院',
+             name:'伊拉克政府军',
              type:'line',
              smooth:true,
              itemStyle: {
@@ -456,7 +456,7 @@ function init(){
              data:[15, 0, 20, 45, 22.1, 25,].reverse()
          },
          {
-             name:'厦门中山医院',
+             name:'伊拉克三九军队',
              type:'line',
              smooth:true,
              itemStyle: {
@@ -469,7 +469,7 @@ function init(){
              data:[25, 10, 30, 55, 32.1, 35, ].reverse()
          },
          {
-             name:'厦门中医院',
+             name:'伊拉克二八军队',
              type:'line',
              smooth:true,
              itemStyle: {
@@ -482,7 +482,7 @@ function init(){
              data:[35, 20, 40, 65, 42.1, 45, ].reverse()
          },
          {
-             name:'厦门第五医院',
+             name:'伊拉克八八军队',
              type:'line',
              smooth:true,
              itemStyle: {

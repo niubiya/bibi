@@ -24,7 +24,7 @@ function init(){
      },
      yAxis: [{
          show: true,
-         data:  ['厦门第一医院','厦门中山医院','厦门中医院','厦门第五医院',],
+         data:  ['伊拉克政府军','伊拉克三九军队','伊拉克二八军队','伊拉克八八军队',],
          inverse: true,
          axisLine: {
              show: false
@@ -131,7 +131,7 @@ function init(){
      },
      yAxis: [{
          show: true,
-         data:  ['厦门第一医院','厦门中山医院','厦门中医院','厦门第五医院',],
+         data:  ['伊拉克政府军','伊拉克三九军队','伊拉克二八军队','伊拉克八八军队',],
          inverse: true,
          axisLine: {
              show: false
@@ -245,10 +245,10 @@ function init(){
               max: 40,
               sort : 'ascending',
               data:[
-                  {value:10, name:'厦门第一医院'},
-                  {value:5, name:'厦门中山医院'},
-                  {value:15, name:'厦门中医院'},
-                  {value:25, name:'厦门第五医院'},
+                  {value:10, name:'伊拉克政府军'},
+                  {value:5, name:'伊拉克三九军队'},
+                  {value:15, name:'伊拉克二八军队'},
+                  {value:25, name:'伊拉克八八军队'},
               ]
           }
       ]
@@ -263,7 +263,7 @@ function init(){
            formatter: "{a}<br/>{b}<br/>{c}元"
        },
        legend: {
-        data:['厦门第一医院','厦门中山医院','厦门中医院','厦门第五医院',],
+        data:['伊拉克政府军','伊拉克三九军队','伊拉克二八军队','伊拉克八八军队',],
         y: 'bottom',
         x:'center',
         textStyle:{
@@ -322,28 +322,28 @@ function init(){
       ],
       series : [
           {
-              name:'厦门第一医院',
+              name:'伊拉克政府军',
               type:'line',
               smooth:true,
               itemStyle: {normal: {areaStyle: {type: 'default'}}},
               data:[10, 12, 21, 54, 260, 830, 710]
           },
           {
-              name:'厦门中山医院',
+              name:'伊拉克三九军队',
               type:'line',
               smooth:true,
               itemStyle: {normal: {areaStyle: {type: 'default'}}},
               data:[30, 182, 434, 791, 390, 30, 10]
           },
           {
-              name:'厦门中医院',
+              name:'伊拉克二八军队',
               type:'line',
               smooth:true,
               itemStyle: {normal: {areaStyle: {type: 'default'}}},
               data:[1320, 1132, 601, 234, 120, 90, 20]
           },
           {
-              name:'厦门第五医院',
+              name:'伊拉克八八军队',
               type:'line',
               smooth:true,
               itemStyle: {normal: {areaStyle: {type: 'default'}}},
@@ -362,7 +362,7 @@ function init(){
            formatter: "{a}<br/>{b}<br/>{c}人"
        },
        legend: {
-        data:['厦门第一医院','厦门中山医院','厦门中医院','厦门第五医院',],
+        data:['伊拉克政府军','伊拉克三九军队','伊拉克二八军队','伊拉克八八军队',],
         y: 'bottom',
         x:'center',
         textStyle:{
@@ -421,28 +421,28 @@ function init(){
       ],
       series : [
           {
-              name:'厦门第一医院',
+              name:'伊拉克政府军',
               type:'line',
               smooth:true,
               itemStyle: {normal: {areaStyle: {type: 'default'}}},
               data:[120, 122, 221, 524, 460, 530, 610]
           },
           {
-              name:'厦门中山医院',
+              name:'伊拉克三九军队',
               type:'line',
               smooth:true,
               itemStyle: {normal: {areaStyle: {type: 'default'}}},
               data:[130, 682, 534, 691, 490, 130, 110]
           },
           {
-              name:'厦门中医院',
+              name:'伊拉克二八军队',
               type:'line',
               smooth:true,
               itemStyle: {normal: {areaStyle: {type: 'default'}}},
               data:[320, 132, 161, 134, 112, 190, 120]
           },
           {
-              name:'厦门第五医院',
+              name:'伊拉克八八军队',
               type:'line',
               smooth:true,
               itemStyle: {normal: {areaStyle: {type: 'default'}}},
@@ -472,10 +472,10 @@ function init(){
               max: 40,
               sort : 'ascending',
               data:[
-                  {value:700, name:'厦门第一医院'},
-                  {value:500, name:'厦门中山医院'},
-                  {value:105, name:'厦门中医院'},
-                  {value:250, name:'厦门第五医院'},
+                  {value:700, name:'伊拉克政府军'},
+                  {value:500, name:'伊拉克三九军队'},
+                  {value:105, name:'伊拉克二八军队'},
+                  {value:250, name:'伊拉克八八军队'},
               ]
           }
       ]
@@ -500,7 +500,7 @@ function init(){
       xAxis : [
           {
               type : 'category',
-              data : ['厦门第一医院','厦门中山医院','厦门中医院','厦门第五医院',],
+              data : ['伊拉克政府军','伊拉克三九军队','伊拉克二八军队','伊拉克八八军队',],
               axisLine:{
                    lineStyle:{
                        color: '#87cefa'
@@ -566,7 +566,7 @@ function init(){
       xAxis : [
           {
               type : 'category',
-              data : ['厦门第一医院','厦门中山医院','厦门中医院','厦门第五医院',],
+              data : ['伊拉克政府军','伊拉克三九军队','伊拉克二八军队','伊拉克八八军队',],
               axisLine:{
                    lineStyle:{
                        color: '#87cefa'
@@ -606,7 +606,7 @@ function init(){
       ],
       series : [
           {
-              name:'平均住院天数',
+              name:'作战天数',
               type:'bar',
               barWidth:30,
               data:[6,8,7,5],

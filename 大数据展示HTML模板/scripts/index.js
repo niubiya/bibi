@@ -55,11 +55,11 @@ function init(){
           type: 'scatter',
           coordinateSystem: 'bmap',
           data: [
-            [118.096435, 24.485408, '厦门市'] ,
-            [118.094564, 24.457358, '厦门第一医院'] ,
-            [118.104103, 24.477761, '厦门中山医院'],
-            [118.14748, 24.506295, '厦门中医院'],
-            [118.254841, 24.665349, '厦门第五医院'],
+            [118.096435, 24.485408, '伊拉克'] ,
+            [118.094564, 24.457358, '伊拉克政府军'] ,
+            [118.104103, 24.477761, '伊拉克三九军队'],
+            [118.14748, 24.506295, '伊拉克二八军队'],
+            [118.254841, 24.665349, '伊拉克八八军队'],
            ]
       }]
   });
@@ -85,7 +85,7 @@ function init(){
             color : '#ffffff',
 
         },
-         data : ['厦门第一医院','厦门中山医院','厦门中医院','厦门第五医院',],
+         data : ['伊拉克政府军','伊拉克三九军队','伊拉克二八军队','伊拉克八八军队',],
     },
     tooltip : {
         trigger: 'item',
@@ -119,10 +119,10 @@ function init(){
                 }
             },
             data:[
-                {value:335, name:'厦门第一医院'},
-                {value:310, name:'厦门中山医院'},
-                {value:234, name:'厦门中医院'},
-                {value:135, name:'厦门第五医院'}
+                {value:335, name:'伊拉克政府军'},
+                {value:310, name:'伊拉克三九军队'},
+                {value:234, name:'伊拉克二八军队'},
+                {value:135, name:'伊拉克八八军队'}
 
             ]
         }
@@ -141,7 +141,7 @@ function init(){
               color : '#ffffff',
 
           },
-           data : ['厦门第一医院','厦门中山医院','厦门中医院','厦门第五医院',],
+           data : ['伊拉克政府军','伊拉克三九军队','伊拉克二八军队','伊拉克八八军队',],
       },
       calculable : false,
       tooltip : {
@@ -210,7 +210,7 @@ function init(){
         },
         series : [
           {
-              name:'厦门第一医院',
+              name:'伊拉克政府军',
               type:'line',
               smooth:true,
               itemStyle: {
@@ -223,7 +223,7 @@ function init(){
               data:[15, 0, 20, 45, 22.1, 25, 70, 55, 76]
           },
           {
-              name:'厦门中山医院',
+              name:'伊拉克三九军队',
               type:'line',
               smooth:true,
               itemStyle: {
@@ -236,7 +236,7 @@ function init(){
               data:[25, 10, 30, 55, 32.1, 35, 80, 65, 76]
           },
           {
-              name:'厦门中医院',
+              name:'伊拉克二八军队',
               type:'line',
               smooth:true,
               itemStyle: {
@@ -249,7 +249,7 @@ function init(){
               data:[35, 20, 40, 65, 42.1, 45, 90, 75, 96]
           },
           {
-              name:'厦门第五医院',
+              name:'伊拉克八八军队',
               type:'line',
               smooth:true,
               itemStyle: {
@@ -271,7 +271,7 @@ function init(){
       legend: {
           y : '250',
           x : 'center',
-          data:['厦门第一医院', '厦门中山医院','厦门中医院','厦门第五医院'],
+          data:['伊拉克政府军', '伊拉克三九军队','伊拉克二八军队','伊拉克八八军队'],
           textStyle : {
               color : '#ffffff',
 
@@ -318,7 +318,7 @@ function init(){
       yAxis : [
           {
               type : 'category',
-              data:['门诊人数(人)', '住院人次(人)','人均费用(元)'],
+              data:['门诊人数(人)', '准备人次(人)','人均费用(元)'],
               axisLabel: {
                   show: true,
                   textStyle: {
@@ -336,28 +336,28 @@ function init(){
 
       series : [
           {
-              name:'厦门第一医院',
+              name:'伊拉克政府军',
               type:'bar',
               stack: '总量',
               itemStyle : { normal: {label : {show: true, position: 'insideRight'}}},
               data:[320, 302, 301]
           },
           {
-              name:'厦门中山医院',
+              name:'伊拉克三九军队',
               type:'bar',
               stack: '总量',
               itemStyle : { normal: {label : {show: true, position: 'insideRight'}}},
               data:[120, 132, 101]
           },
           {
-              name:'厦门中医院',
+              name:'伊拉克二八军队',
               type:'bar',
               stack: '总量',
               itemStyle : { normal: {label : {show: true, position: 'insideRight'}}},
               data:[220, 182, 191]
           },
           {
-              name:'厦门第五医院',
+              name:'伊拉克八八军队',
               type:'bar',
               stack: '总量',
               itemStyle : { normal: {label : {show: true, position: 'insideRight'}}},
@@ -378,7 +378,7 @@ function init(){
              color : '#ffffff',
 
          },
-          data : ['厦门第一医院','厦门中山医院','厦门中医院','厦门第五医院',],
+          data : ['伊拉克政府军','伊拉克三九军队','伊拉克二八军队','伊拉克八八军队',],
      },
      calculable : false,
      tooltip : {
@@ -447,7 +447,7 @@ function init(){
        },
        series : [
          {
-             name:'厦门第一医院',
+             name:'伊拉克政府军',
              type:'line',
              smooth:true,
              itemStyle: {
@@ -460,7 +460,7 @@ function init(){
              data:[15, 0, 20, 45, 22.1, 25,].reverse()
          },
          {
-             name:'厦门中山医院',
+             name:'伊拉克三九军队',
              type:'line',
              smooth:true,
              itemStyle: {
@@ -473,7 +473,7 @@ function init(){
              data:[25, 10, 30, 55, 32.1, 35, ].reverse()
          },
          {
-             name:'厦门中医院',
+             name:'伊拉克二八军队',
              type:'line',
              smooth:true,
              itemStyle: {
@@ -486,7 +486,7 @@ function init(){
              data:[35, 20, 40, 65, 42.1, 45, ].reverse()
          },
          {
-             name:'厦门第五医院',
+             name:'伊拉克八八军队',
              type:'line',
              smooth:true,
              itemStyle: {
@@ -517,7 +517,7 @@ function init2(){
             color : '#ffffff',
 
         },
-         data : ['门诊人次','住院人次'],
+         data : ['出战人次','准备人次'],
     },
     calculable : false,
     tooltip : {
@@ -598,7 +598,7 @@ function init2(){
       },
       series : [
         {
-            name:'门诊费用',
+            name:'军粮费用',
             type:'line',
             smooth:true,
             itemStyle: {
@@ -611,7 +611,7 @@ function init2(){
             data:[1150, 180, 2100, 2415, 1212.1, 3125,1510, 810, 2100, 2415, 1122.1, 3215,1510, 801, 2001, 2245, 1232.1, 3245,1520, 830, 2200, 2145, 1223.1, 3225,150, 80, 200, 245, 122.1, 325]
         },
         {
-            name:'住院费用',
+            name:'装备费用',
             type:'line',
             smooth:true,
             itemStyle: {
@@ -710,7 +710,7 @@ function init2(){
       },
       series : [
         {
-            name:'医疗费用',
+            name:'武器费用',
             type:'line',
             smooth:true,
             itemStyle: {
@@ -736,7 +736,7 @@ function init2(){
     calculable : true,
     series : [
         {
-            name:'发病人数',
+            name:'出战人数',
             type:'pie',
             radius : [30, 110],
             center : ['50%', '50%'],
@@ -747,12 +747,12 @@ function init2(){
 
             sort : 'ascending',
             data:[
-                {value:10, name:'婴儿(1-3岁)'},
-                {value:5, name:'少儿(4-10岁)'},
-                {value:15, name:'少年(10-18岁)'},
-                {value:25, name:'青年(18-45岁)'},
-                {value:125, name:'中年(45-60岁)'},
-                {value:175, name:'老年(60岁以上)'},
+                {value:10, name:'海军(10500)'},
+                {value:5, name:'空军(1000)'},
+                {value:15, name:'陆军(50000)0'},
+                {value:25, name:'和平军(10000)'},
+                {value:125, name:'坦克军(80000)'},
+                {value:175, name:'炮军(60000)'},
             ]
         }
     ]
@@ -769,7 +769,7 @@ function init2(){
     calculable : true,
     series : [
         {
-            name:'发病人数',
+            name:'出战人数',
             type:'pie',
             radius : [30, 110],
             center : ['50%', '50%'],
@@ -780,12 +780,12 @@ function init2(){
 
             sort : 'ascending',
             data:[
-                {value:10, name:'诊察费用'},
-                {value:500, name:'检查费用'},
-                {value:150, name:'检验费用'},
-                {value:250, name:'西药费用'},
-                {value:125, name:'中药费用'},
-                {value:1750, name:'手术费用'},
+                {value:10, name:'军粮费用'},
+                {value:500, name:'装备费用'},
+                {value:150, name:'武器费用'},
+                {value:250, name:'装甲费用'},
+                {value:125, name:'飞机费用'},
+                {value:1750, name:'船只费用'},
             ]
         }
     ]
