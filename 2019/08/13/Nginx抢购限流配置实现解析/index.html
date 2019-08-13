@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang class="loading">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Nginx - bibi</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="bibi,"> 
+    <meta name="description" content="Testing website,Nginx抢购限流配置实现解析因业务需求经常会有抢购业务，因此需要在负载均衡前端进行限流错误。本文同样也适用于防止CC.
+12345678910111213141516171819202122232,"> 
+    <meta name="author" content="Mode"> 
+    <link rel="alternative" href="atom.xml" title="bibi" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.ico"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">bibi</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" data-url="http://yxbibi.com"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">Nginx</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">Nginx</h1>
+        <div class="stuff">
+            <span>八月 13, 2019</span>
+            
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Filebeat/">Filebeat</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/linux/">linux</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="Nginx抢购限流配置实现解析"><a href="#Nginx抢购限流配置实现解析" class="headerlink" title="Nginx抢购限流配置实现解析"></a>Nginx抢购限流配置实现解析</h1><p>因业务需求经常会有抢购业务，因此需要在负载均衡前端进行限流错误。本文同样也适用于防止CC.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">limit_req_zone $server_name zone=sname:10m rate=1r/s;        #限制服务器每秒只能有一次访问成功</span><br><span class="line">    #limit_req_zone $binary_remote_addr zone=one:3m rate=1r/s;    #限制IP，每秒只能访问一次</span><br><span class="line">    #limit_req_zone $binary_remote_addr $uri zone=two:3m rate=1r/s;  #限制IP和路径不带参数，</span><br><span class="line">    #limit_req_zone $binary_remote_addr $request_uri zone=thre:3m rate=1r/s;  #限制IP和带参数的路径 </span><br><span class="line"></span><br><span class="line">  server &#123;</span><br><span class="line">    listen    80;</span><br><span class="line">    server_name www.abc.com;</span><br><span class="line">    location / &#123;</span><br><span class="line">        include host/proxy.cnf;</span><br><span class="line">        proxy_pass http://backend;</span><br><span class="line">    &#125;</span><br><span class="line">    location /api/createOrder &#123;</span><br><span class="line">        limit_req zone=sname;  #不带突发，只能有一次正常请求</span><br><span class="line">        limit_req_status 503;    #设置返回的状态码是503</span><br><span class="line">        #limit_req zone=sname burst=5 nodelay;  #最大并发是5，并且实时处理</span><br><span class="line">        include host/proxy.cnf;</span><br><span class="line">        proxy_pass http://backend;</span><br><span class="line">        error_page 503 =200 /50x.html;   #这里很重要，可以将错误的状态码503，返回结果的时候是200</span><br><span class="line">    &#125;</span><br><span class="line">    location = /50x.html &#123;</span><br><span class="line">        if ($http_user_agent ~* &quot;mobile|android|iPhone|iphone|ios|iOS&quot;)&#123;</span><br><span class="line">            #default_type application/json;</span><br><span class="line">            return 200 &apos;&#123;&quot;msg&quot;: &quot;活动过于火爆，请稍后重试!&quot;,&quot;data&quot;: &#123;&#125;,&quot;code&quot;: -1&#125;&apos;;  #设置移动端返回错误的信息显示</span><br><span class="line">        &#125;</span><br><span class="line">        root  html;   #如果是PC端返回一个HTML页面</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>重点: 正常情况下，如果设置了限流，返回是503的状态码，这对于移动端来说即便是你返回JSON数据但是客户端时不认的，这个时候巧妙的通过 error_page 403 =200 /50x.html;将状态码设置为200</p>
+<p>以上只是使用了ngx_limit_req_module,同时也可以使用ngx_limit_conn_module模块。</p>
+<p>特别是一些咨询类网站如果备爬虫盯上，服务器可能会被爬虫给干死(小网站就是这样)<br>那么怎么办呢，我们可以使用变量去做</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#全局配置</span><br><span class="line">limit_req_zone $spider zone=spider:60m rate=200r/m;  #限制爬虫每分钟只能跑200次</span><br><span class="line">#某个server中</span><br><span class="line">limit_req zone=spider burst=5 nodelay;</span><br><span class="line">if ($http_user_agent ~* “spider|bot”) &#123;</span><br><span class="line">  set $spider $http_user_agent;   #设置变量，进入这里的就进行限速</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="http://domain.com/awesome.mp3">
+            </audio>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci='da3657c4f867c6a83c01'
+        data-cs='a06b9d406ceb59b8065b64777537171d59405170'
+        data-r='bibi'
+        data-o='niubiya'
+        data-a='niubiya'
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+    </div>
+</div>
+
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>
