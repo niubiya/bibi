@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang class="loading">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Ftp虚拟用户创建过程 - bibi</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="bibi,"> 
+    <meta name="description" content="Testing website,ftp虚拟用户创建过程需求：​    搭建一台ftp服务器，并且使用虚拟用户登录，虚拟用户具有上传、下载、创建、删除、修改等功能。​过程：
+1.安装vsftpd12345# rpm -qa vsft,"> 
+    <meta name="author" content="Mode"> 
+    <link rel="alternative" href="atom.xml" title="bibi" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.ico"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">bibi</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" data-url="http://yxbibi.com"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">Ftp虚拟用户创建过程</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">Ftp虚拟用户创建过程</h1>
+        <div class="stuff">
+            <span>八月 14, 2019</span>
+            
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/ftp虚拟用户创建过程/">ftp虚拟用户创建过程</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/linux/">linux</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="ftp虚拟用户创建过程"><a href="#ftp虚拟用户创建过程" class="headerlink" title="ftp虚拟用户创建过程"></a>ftp虚拟用户创建过程</h1><p>需求：<br>​    搭建一台ftp服务器，并且使用虚拟用户登录，虚拟用户具有上传、下载、创建、删除、修改等功能。<br>​<br>过程：</p>
+<h3 id="1-安装vsftpd"><a href="#1-安装vsftpd" class="headerlink" title="1.安装vsftpd"></a>1.安装vsftpd</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># rpm -qa vsftpd                       //检测是否安装vsftpd</span><br><span class="line"># yum -y install vsftpd               //没有则使用yum方式安装</span><br><span class="line"># chkconfig vsftpd on</span><br><span class="line"># service vsftpd start</span><br><span class="line"># iptables -F</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-创建虚拟用户"><a href="#2-创建虚拟用户" class="headerlink" title="2.创建虚拟用户"></a>2.创建虚拟用户</h2><p>ftp服务器虚拟用户的原理是把虚拟用户的权限映射到系统用户上，而虚拟用户权限是由系统用户对目录的控制得到的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># useradd weihu -s /sbin/nologin              //创建映射的系统用户weihu</span><br><span class="line"># chmod -R 750 /home/weihu                  //修改weihu用户家目录的权限</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-修改vsftpd的配置文件"><a href="#3-修改vsftpd的配置文件" class="headerlink" title="3.修改vsftpd的配置文件"></a>3.修改vsftpd的配置文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># cp /etc/vsftpd/vsftpd.conf&#123;,.bak&#125;</span><br><span class="line"># vi /etc/vsftpd/vsftpd.conf</span><br><span class="line"></span><br><span class="line">添加如下内容：</span><br><span class="line">pasv_enable=YES</span><br><span class="line">pasv_min_port=30000</span><br><span class="line">pasv_max_port=31000</span><br><span class="line">chroot_local_user=YES</span><br><span class="line">chroot_list_enable=NO</span><br><span class="line">guest_enable=YES</span><br><span class="line">user_config_dir=/etc/vsftpd/config</span><br><span class="line">pam_service_name=vsftpd</span><br><span class="line"></span><br><span class="line">其中</span><br><span class="line">pasv_enable=YES 指定开启vsftpd被动模式，在被动模式下只需要vsftpd服务器开启相应端口即可，客户端无需再开启端口。</span><br><span class="line">pasv_min_port=30000 指定被动模式最小端口号。</span><br><span class="line">pasv_max_port=31000 指定被动模式最大端口号。</span><br><span class="line">guest_enable表示是否开启vsftpd虚拟用户的功能，yes表示开启，no表示不开启。</span><br><span class="line">user_config_dir指定每个虚拟用户账号配置目录。</span><br><span class="line">pam_service_name设置PAM使用的名称,该名称就是/etc/pam.d/目录下vsftpd.virtual的文件。</span><br><span class="line">chroot_local_user=YES是否将所有用户锁定在主目录，YES为启用，NO禁用.(包括注释掉也为禁用)。</span><br><span class="line">chroot_list_enable=NO是否启动锁定用户的名单，YES为启用，NO禁用(包括注释掉也为禁用)。</span><br><span class="line">chroot_local_user=YES和chroot_list_enable=NO一起使用表示禁止所有用户切换到上级目录。</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-创建虚拟用户账号的配置目录"><a href="#4-创建虚拟用户账号的配置目录" class="headerlink" title="4.创建虚拟用户账号的配置目录"></a>4.创建虚拟用户账号的配置目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># mkdir /etc/vsftpd/config</span><br><span class="line"></span><br><span class="line"># vim /etc/vsftpd/login.txt</span><br><span class="line"></span><br><span class="line">创建存储虚拟用户账号和密码的文件，并且添加如下内容：</span><br><span class="line">weihu</span><br><span class="line">weihu123</span><br></pre></td></tr></table></figure>
+
+<p>其中，第一行表示虚拟用户的用户名，第二行表示虚拟用户的密码，每个一行，可以写多个。<br>这个文件的虚拟用户和密码的文本文件无法被系统帐号直接调用，所以我们需要使用db_load命令<br>生成db口令数据库文件，生成命令如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db_load -T -t hash -f /etc/vsftpd/login.txt /etc/vsftpd/login.db</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-虚拟用户的PAM认证"><a href="#5-虚拟用户的PAM认证" class="headerlink" title="5.虚拟用户的PAM认证"></a>5.虚拟用户的PAM认证</h3><p>​    为了使服务器能够使用上述生成的数据库文件，对客户端进行身份验证，需要调用系统的PAM模块。<br>PAM(Plugable Authentication Module)为可插拔认证模块，不必重新安装应用系统，通过修改指定的配置<br>文件，调整对该程序的认证方式。PAM模块配置文件路径为/etc/pam.d/目录，此目录下保存着大量与认<br>证有关的配置文件，并以服务名称命名。</p>
+<p>编辑/etc/pam.d/vsftpd文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># vim /etc/pam.d/vsftpd</span><br><span class="line"></span><br><span class="line">进入文件后注释掉原来的内容，添加如下内容：</span><br><span class="line">auth required /lib64/security/pam_userdb.so db=/etc/vsftpd/login</span><br><span class="line">account required /lib64/security/pam_userdb.so db=/etc/vsftpd/login</span><br><span class="line"></span><br><span class="line">auth是指对用户的用户名口令进行验证。</span><br><span class="line">accout是指对用户的帐户有哪些权限哪些限制进行验证。</span><br><span class="line">/lib64/security/pam_userdb.so表示该条审核将调用pam_userdb.so这个库函数进行。</span><br><span class="line">db=/etc/vsftpd/login则指定了验证库函数将到这个指定的数据库中调用数据进行验证。其实该文件指的是/etc/vsftpd/login.db文件。</span><br><span class="line">注意：db=/etc/vsftpd/login格式是这样的，去掉.db后缀。</span><br><span class="line"></span><br><span class="line">32位的系统可能使用下面的认证内容</span><br><span class="line">auth required /lib/security/pam_userdb.so db=/etc/vsftpd/login</span><br><span class="line">account required /lib/security/pam_userdb.so db=/etc/vsftpd/login</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-创建虚拟用户配置文件"><a href="#6-创建虚拟用户配置文件" class="headerlink" title="6.创建虚拟用户配置文件"></a>6.创建虚拟用户配置文件</h3><p>​    PAM配置完毕后，我们现在开始创建虚拟用户与系统用户对应的文件。切换到/etc/vsftpd/config目录下，并创建weihu文件。<br>注意该文件名称一定要与login.txt中的虚拟用户要对应。比如现在login.txt文件有weihu用户，那么在 /etc/vsftpd/config目录下<br>创建一个文件名为weihu的文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"># cd /etc/vsftpd</span><br><span class="line"># vi config/weihu</span><br><span class="line"></span><br><span class="line">添加如下内容：</span><br><span class="line">guest_username=weihu</span><br><span class="line">local_root=/home/weihu</span><br><span class="line">virtual_use_local_privs=YES</span><br><span class="line">anon_umask=133</span><br><span class="line"></span><br><span class="line">其中，guest_username=weihu    表示的是设置FTP对应的系统用户为weihu，也可以是其他用户，比如创建名为alice的用户</span><br><span class="line">local_root=/home/weihu    表示使用本地用户登录到ftp时的默认目录</span><br><span class="line">virtual_use_local_privs=YES    虚拟用户和本地用户有相同的权限</span><br><span class="line">anon_umask    表示文件上传的默认掩码。计算方式是777减去anon_umask就是上传文件的权限。在此设置的是133，</span><br><span class="line">也就是说上传后文件的权限是644。即上传的文件对所属用户来说只有读写权限，没有执行权限。</span><br><span class="line"></span><br><span class="line">修改完之后，重启vsftpd服务</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service vsftpd restart</span><br></pre></td></tr></table></figure>
+
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="http://domain.com/awesome.mp3">
+            </audio>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci='da3657c4f867c6a83c01'
+        data-cs='a06b9d406ceb59b8065b64777537171d59405170'
+        data-r='bibi'
+        data-o='niubiya'
+        data-a='niubiya'
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+    </div>
+</div>
+
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>
