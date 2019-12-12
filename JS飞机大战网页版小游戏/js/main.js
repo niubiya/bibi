@@ -127,7 +127,7 @@
                     };
 
                     for(var i = 0, e = document.getElementsByClassName('enemy') ,len = e.length; i<len; i++){
-                        if(That.TC(e[i],That.plane) ){  //���л���ײ]
+                        if(That.TC(e[i],That.plane) ){  //��л���ײ]
 
                             clearInterval(obj.timer);
                             That.gameOver();
@@ -163,7 +163,7 @@
                 }
             },
 
-            speedDecomposition : function(pl,bt){   //�����л��ӵ����򣬻����ɻ�
+            speedDecomposition : function(pl,bt){   //����л��ӵ����򣬻���ɻ�
 
                 var plleft = pl.offsetLeft,
                     pltop = pl.offsetTop,
@@ -233,7 +233,7 @@
                 },30)
             },
 
-            bindPlane : function(p){   //���Ʒɻ������¼�
+            bindPlane : function(p){   //���Ʒɻ�����¼�
 
                 var lagoutx = this.layout.offsetLeft,
                     lagouty = this.layout.offsetTop,
@@ -301,7 +301,7 @@
 
             },
 
-            TC : function(obj1,obj2){   //��ײ����
+            TC : function(obj1,obj2){   //��ײ���
 
                 var t1 = obj1.offsetTop,                      //��
                     r1 = obj1.offsetLeft + obj1.offsetWidth,  //��
