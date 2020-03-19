@@ -1,68 +1,182 @@
-
 <!DOCTYPE html>
-<html lang class="loading">
+<html>
 <head><meta name="generator" content="Hexo 3.9.0">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Nginx - bibi</title>
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="google" content="notranslate">
-    <meta name="keywords" content="bibi,"> 
-    <meta name="description" content="Testing website,Nginx调优一、Nginx调优选项参数1.worker_processes123worker_processes 8;nginx进程数，建议按照cpu数目来指定，一般跟cpu核数相同或为它的倍数。,"> 
-    <meta name="author" content="Mode"> 
-    <link rel="alternative" href="atom.xml" title="bibi" type="application/atom+xml"> 
-    <link rel="icon" href="/img/favicon.ico"> 
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-    <link rel="stylesheet" href="/css/diaspora.css">
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({
-              google_ad_client: "ca-pub-8691406134231910",
-              enable_page_level_ads: true
-         });
-    </script>
-    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
-    </script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<title>
+  
+    Nginx
+  
+</title>
+
+<meta name="description" content="Nginx调优一、Nginx调优选项参数1.worker_processes123worker_processes 8;nginx进程数，建议按照cpu数目来指定，一般跟cpu核数相同或为它的倍数。  2.worker_cpu_affinity1234worker_cpu_affinity 00000001 00000010 00000100 0000100000010000 00100000 0">
+<meta name="keywords" content="linux,Nginx">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nginx">
+<meta property="og:url" content="http://yxbibi.com/2019/08/08/Nginx调优/index.html">
+<meta property="og:site_name" content="bibi">
+<meta property="og:description" content="Nginx调优一、Nginx调优选项参数1.worker_processes123worker_processes 8;nginx进程数，建议按照cpu数目来指定，一般跟cpu核数相同或为它的倍数。  2.worker_cpu_affinity1234worker_cpu_affinity 00000001 00000010 00000100 0000100000010000 00100000 0">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-12-13T01:27:11.256Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Nginx">
+<meta name="twitter:description" content="Nginx调优一、Nginx调优选项参数1.worker_processes123worker_processes 8;nginx进程数，建议按照cpu数目来指定，一般跟cpu核数相同或为它的倍数。  2.worker_cpu_affinity1234worker_cpu_affinity 00000001 00000010 00000100 0000100000010000 00100000 0">
+
+
+  <link rel="alternative" href="/atom.xml" title="bibi" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
 </head>
-</html>
-<body class="loading">
-    <span id="config-title" style="display:none">bibi</span>
-    <div id="loader"></div>
-    <div id="single">
-    <div id="top" style="display: block;">
-    <div class="bar" style="width: 0;"></div>
-    <a class="icon-home image-icon" href="javascript:;" data-url="http://yxbibi.com"></a>
-    <div title="播放/暂停" class="icon-play"></div>
-    <h3 class="subtitle">Nginx</h3>
-    <div class="social">
-        <!--<div class="like-icon">-->
-            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
-        <!--</div>-->
-        <div>
-            <div class="share">
-                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
-            </div>
-            <div id="qr"></div>
-        </div>
-    </div>
-    <div class="scrollbar"></div>
+<body class="monochrome">
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">bibi</a>
 </div>
 
-    <div class="section">
-        <div class="article">
-    <div class='main'>
-        <h1 class="title">Nginx</h1>
-        <div class="stuff">
-            <span>八月 08, 2019</span>
-            
-  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Nginx/">Nginx</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/linux/">linux</a></li></ul>
-
-
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">bibi</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+          <div class="description">Testing website</div>
+        
+        
+          <div class="author">Mode</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <a href="/about"><img src="https://cn.gravatar.com/avatar/35fef74d731255cd569c2c2b0b9e87e4?s=200"></a>
+          
         </div>
-        <div class="content markdown">
-            <h1 id="Nginx调优"><a href="#Nginx调优" class="headerlink" title="Nginx调优"></a>Nginx调优</h1><h2 id="一、Nginx调优选项参数"><a href="#一、Nginx调优选项参数" class="headerlink" title="一、Nginx调优选项参数"></a>一、Nginx调优选项参数</h2><h3 id="1-worker-processes"><a href="#1-worker-processes" class="headerlink" title="1.worker_processes"></a>1.worker_processes</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">worker_processes 8;</span><br><span class="line">nginx进程数，建议按照cpu数目来指定，一般跟cpu核数相同或为它的倍</span><br><span class="line">数。</span><br></pre></td></tr></table></figure>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">Category</a>
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Openresty/">Openresty</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Zabbix/">Zabbix</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/centos/">centos</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/centos7/">centos7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/rsync/">rsync</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/text/">text</a><span class="category-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">Tag</a>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DNS服务器搭建/">DNS服务器搭建</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ELK/">ELK</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EMQ/">EMQ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Filebeat/">Filebeat</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JumpServer/">JumpServer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KONG/">KONG</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LVM/">LVM</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Memcached/">Memcached</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Openresty/">Openresty</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PXE-Kickstart-Cobbler/">PXE+Kickstart+Cobbler</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis3/">Redis3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Rsync-inotify/">Rsync+inotify</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tomcat/">Tomcat</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Zabbix/">Zabbix</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/app-install/">app install</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bibi/">bibi</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos7/">centos7</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ftp虚拟用户创建过程/">ftp虚拟用户创建过程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hello/">hello</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">22</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lvm/">lvm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openssl/">openssl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rsync/">rsync</a><span class="tag-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">Archive</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">30</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="/" title="Homepage">Homepage</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/archives" title="By Year">By Year</a>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="https://github.com/denjones/hexo-theme-chan" title="Chan" target="_blank" rel="noopener">Chan</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="https://github.com/denjones" title="Github" target="_blank" rel="noopener">Github</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/atom.xml" title="RSS">RSS</a>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-Nginx调优" class="article article-type-post">
+  
+    <h1 class="article-header">
+      Nginx
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2019-08-08
+</span>
+
+    
+	<span class="article-category tagcloud">
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/centos/">centos</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/centos/Nginx/">Nginx</a></li></ul></li></ul>
+	</span>
+
+
+    
+	<span class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+	</span>
+
+
+  </div>
+  <div class="article-entry">
+    <h1 id="Nginx调优"><a href="#Nginx调优" class="headerlink" title="Nginx调优"></a>Nginx调优</h1><h2 id="一、Nginx调优选项参数"><a href="#一、Nginx调优选项参数" class="headerlink" title="一、Nginx调优选项参数"></a>一、Nginx调优选项参数</h2><h3 id="1-worker-processes"><a href="#1-worker-processes" class="headerlink" title="1.worker_processes"></a>1.worker_processes</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">worker_processes 8;</span><br><span class="line">nginx进程数，建议按照cpu数目来指定，一般跟cpu核数相同或为它的倍</span><br><span class="line">数。</span><br></pre></td></tr></table></figure>
 
 <h3 id="2-worker-cpu-affinity"><a href="#2-worker-cpu-affinity" class="headerlink" title="2.worker_cpu_affinity"></a>2.worker_cpu_affinity</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">worker_cpu_affinity 00000001 00000010 00000100 00001000</span><br><span class="line">00010000 00100000 01000000 10000000;</span><br><span class="line">为每个进程分配cpu，上例中将8个进程分配到8个cpu，当然可以写多个，或</span><br><span class="line">者将一个进程分配到多个cpu。</span><br></pre></td></tr></table></figure>
 
@@ -137,90 +251,119 @@
 <h3 id="2-方案"><a href="#2-方案" class="headerlink" title="2.方案"></a>2.方案</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">fs.file-max = 204800</span><br><span class="line">fs.nr_open = 204800</span><br><span class="line">net.ipv4.tcp_syncookies = 1</span><br><span class="line">net.ipv4.tcp_max_tw_buckets = 25600</span><br><span class="line">net.core.netdev_max_backlog = 262144</span><br><span class="line">net.core.rmem_default=262144 # 接收套接字缓冲区大小的默认值</span><br><span class="line">net.core.wmem_default=262144 # 发送套接字缓冲区大小的默认值</span><br><span class="line">net.core.rmem_max=16777216 # 接收套接字缓冲区大小的最大值</span><br><span class="line">net.core.wmem_max=16777216 # 发送套接字缓冲区大小的最大值</span><br><span class="line">net.core.optmem_max=16777216 # socket buffer的最大初始化</span><br><span class="line">值,默认10K</span><br><span class="line">net.core.somaxconn = 40960</span><br><span class="line">net.ipv4.tcp_max_orphans = 3276800</span><br><span class="line">net.ipv4.tcp_max_syn_backlog = 262144</span><br><span class="line">net.ipv4.tcp_timestamps = 0 # 选择不开启</span><br><span class="line">net.ipv4.tcp_synack_retries = 1</span><br><span class="line">net.ipv4.tcp_syn_retries = 1</span><br><span class="line">net.ipv4.tcp_tw_recycle = 0 # 选择不开启</span><br><span class="line">net.ipv4.tcp_tw_reuse = 0 # 选择不开启</span><br><span class="line">net.ipv4.tcp_fin_timeout = 15</span><br><span class="line">net.ipv4.tcp_keepalive_time = 30</span><br><span class="line">net.ipv4.tcp_keepalive_probes = 3</span><br><span class="line">net.ipv4.tcp_keepalive_intvl = 15</span><br><span class="line">net.ipv4.ip_local_port_range = 1024 65535</span><br><span class="line">net.ipv4.tcp_sack = 1 # 谨慎开启</span><br><span class="line">net.ipv4.tcp_slow_start_after_idle = 0</span><br><span class="line">net.ipv4.icmp_echo_ignore_broadcasts = 0 # 选择不开启，允许</span><br><span class="line">ping</span><br><span class="line">net.ipv4.icmp_ignore_bogus_error_responses = 1</span><br><span class="line">net.inet.udp.checksum=1</span><br></pre></td></tr></table></figure>
 
 
-            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
-            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
-                <source type="audio/mpeg" src="http://domain.com/awesome.mp3">
-            </audio>
-            
-        </div>
-        
-    <div id='gitalk-container' class="comment link"
-        data-ae='false'
-        data-ci='da3657c4f867c6a83c01'
-        data-cs='a06b9d406ceb59b8065b64777537171d59405170'
-        data-r='bibi'
-        data-o='niubiya'
-        data-a='niubiya'
-        data-d='false'
-    >查看评论</div>
-
-
-    </div>
+  </div>
+  <footer class="article-footer">
     
+  <div class="cc">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank" title="Attribution-ShareAlike">
+      <img src="/images/cc/cc.png">
+      
+          <img src="/images/cc/by.png">
+        
+          <img src="/images/cc/sa.png">
+      
+      <span>
+        This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+      </span>
+    </a>
+  </div>
+
+
+    
+
+  </footer>
+</article>
+
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2020 bibi - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
 </div>
 
+      
+        </div>
+      
     </div>
-</div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 
-</body>
-<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
-<script src="/js/plugin.js"></script>
-<script src="/js/diaspora.js"></script>
-<link rel="stylesheet" href="/photoswipe/photoswipe.css">
-<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
-<script src="/photoswipe/photoswipe.min.js"></script>
-<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
 
-<!-- Root element of PhotoSwipe. Must have class pswp. -->
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-    <!-- Background of PhotoSwipe. 
-         It's a separate element as animating opacity is faster than rgba(). -->
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
     <div class="pswp__bg"></div>
+
     <!-- Slides wrapper with overflow:hidden. -->
     <div class="pswp__scroll-wrap">
-        <!-- Container that holds slides. 
-            PhotoSwipe keeps only 3 of them in the DOM to save memory.
-            Don't modify these 3 pswp__item elements, data is added later on. -->
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
         </div>
-        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-        <div class="pswp__ui pswp__ui--hidden">
-            <div class="pswp__top-bar">
-                <!--  Controls are self-explanatory. Order can be changed. -->
-                <div class="pswp__counter"></div>
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                <button class="pswp__button pswp__button--share" title="Share"></button>
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-                <!-- element will get class pswp__preloader--active when preloader is running -->
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                      <div class="pswp__preloader__cut">
-                        <div class="pswp__preloader__donut"></div>
-                      </div>
-                    </div>
-                </div>
-            </div>
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div> 
-            </div>
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
         </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
 
 
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
 
-
+</body>
 </html>

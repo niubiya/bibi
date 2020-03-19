@@ -1,195 +1,319 @@
-
 <!DOCTYPE html>
-<html lang class="loading">
+<html>
 <head><meta name="generator" content="Hexo 3.9.0">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Tag: DNS服务器搭建 - bibi</title>
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="google" content="notranslate">
-    <meta name="keywords" content="bibi,"> 
-    <meta name="description" content="Testing website,"> 
-    <meta name="author" content="Mode"> 
-    <link rel="alternative" href="atom.xml" title="bibi" type="application/atom+xml"> 
-    <link rel="icon" href="/img/favicon.ico"> 
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-    <link rel="stylesheet" href="/css/diaspora.css">
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({
-              google_ad_client: "ca-pub-8691406134231910",
-              enable_page_level_ads: true
-         });
-    </script>
-    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
-    </script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<title>
+  
+    Tag: DNS服务器搭建
+  
+</title>
+
+<meta name="description" content="Testing website">
+<meta property="og:type" content="website">
+<meta property="og:title" content="bibi">
+<meta property="og:url" content="http://yxbibi.com/tags/DNS服务器搭建/index.html">
+<meta property="og:site_name" content="bibi">
+<meta property="og:description" content="Testing website">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="bibi">
+<meta name="twitter:description" content="Testing website">
+
+
+  <link rel="alternative" href="/atom.xml" title="bibi" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
 </head>
-</html>
-<body class="loading">
-    <span id="config-title" style="display:none">bibi</span>
-    <div id="loader"></div>
-    <div class="nav">
-    <ul id="menu-menu" class="menu">
-        
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/whoami/" title="Whoami" target="_blank" rel="noopener">Whoami</a>
-        </li>
-        
-        <li class="  menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="https://github.com/niubiya" title="Github" target="_blank" rel="noopener">Github</a>
-        </li>
-        
-        <li class="  menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="https://blog.imdst.com/" title="Twitter" target="_blank" rel="noopener">Twitter</a>
-        </li>
-        
-        <li class="  menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="https://ydcf.top" title="blog" target="_blank" rel="noopener">blog</a>
-        </li>
-        
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/categories/" title="分类" target="_blank" rel="noopener">分类</a>
-        </li>
-        
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/archives/" title="归档" target="_blank" rel="noopener">归档</a>
-        </li>
-        
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/tags/" title="标签云" target="_blank" rel="noopener">标签云</a>
-        </li>
-        
-        <li class="  menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="https://tableconvert.com/" title="表格生成器" target="_blank" rel="noopener">表格生成器</a>
-        </li>
-        
-        <li class="  menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="http://www.yxbibi.com/fk.html" title="game" target="_blank" rel="noopener">game</a>
-        </li>
-        
-        <li class="  menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="http://www.yxbibi.com/HTML53D魔方小游戏/index.html" title="HTML53D魔方" target="_blank" rel="noopener">HTML53D魔方</a>
-        </li>
-        
-        <li class="  menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="http://www.yxbibi.com/JS飞机大战网页版小游戏/index.html" title="JS飞机大战" target="_blank" rel="noopener">JS飞机大战</a>
-        </li>
-        
-        <li class="  menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="http://www.yxbibi.com/HTML5植物大战僵尸/index.html" title="植物大战僵尸" target="_blank" rel="noopener">植物大战僵尸</a>
-        </li>
-        
-        <li class="  menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="http://www.yxbibi.com/大数据展示HTML模板/views/index.html" title="大数据展示HTML模板" target="_blank" rel="noopener">大数据展示HTML模板</a>
-        </li>
-        
-    </ul>
-    <p id="copyright">
-        &copy; 2020 Mode.
-        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
-        Theme <a href="https://github.com/Fechin/hexo-theme-diaspora" title="Diaspora" target="_blank" rel="noopener">Diaspora</a>
-        by Fechin
-    </p>
+<body class="monochrome">
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">bibi</a>
 </div>
 
-<div id="container">
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">bibi</a></h1>
     
-<div id="screen">
-    <div id="mark">
-        <div class="layer" data-depth="0.4">
-            <img src="/img/cover2.jpg" id="cover" crossorigin="anonymous" width="1920" height="1080">
+    <div class="info">
+      <div class="content">
+        
+          <div class="description">Testing website</div>
+        
+        
+          <div class="author">Mode</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <a href="/about"><img src="https://cn.gravatar.com/avatar/35fef74d731255cd569c2c2b0b9e87e4?s=200"></a>
+          
         </div>
+      
     </div>
-    <div id="vibrant">
-        <svg viewBox="0 0 2880 1620" height="100%" preserveAspectRatio="xMaxYMax slice">
-            <polygon opacity="0.7" points="2000,1620 0,1620 0,0 600,0 "/>
-        </svg>
-        <div></div>
-    </div>
-    <div id="header">
-        <div>
-            <a class="image-logo" href="/"></a>
-            <div class="icon-menu switchmenu"></div>
-        </div>
-    </div>
+  </div>
+  <div class="body">
     
-    <div id="post0">
-        <p>八月 14, 2019</p>
-        <h2><a href="/2019/08/14/DNSmasq域名服务器搭建/" title="DNS服务器搭建" class="posttitle">DNS服务器搭建</a></h2>
-        <p class="summary">DNS服务器搭建DNSmasq是一个小巧且方便地用于配置DNS和DHCP的工具，适用于小型网络。作为域名解析服务器...</p>
-    </div>
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">Category</a>
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Openresty/">Openresty</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Zabbix/">Zabbix</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/centos/">centos</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/centos7/">centos7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/rsync/">rsync</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/text/">text</a><span class="category-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">Tag</a>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DNS服务器搭建/">DNS服务器搭建</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ELK/">ELK</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EMQ/">EMQ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Filebeat/">Filebeat</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JumpServer/">JumpServer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KONG/">KONG</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LVM/">LVM</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Memcached/">Memcached</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Openresty/">Openresty</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PXE-Kickstart-Cobbler/">PXE+Kickstart+Cobbler</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis3/">Redis3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Rsync-inotify/">Rsync+inotify</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tomcat/">Tomcat</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Zabbix/">Zabbix</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/app-install/">app install</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bibi/">bibi</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos7/">centos7</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ftp虚拟用户创建过程/">ftp虚拟用户创建过程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hello/">hello</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">22</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lvm/">lvm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openssl/">openssl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rsync/">rsync</a><span class="tag-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">Archive</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">30</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="/" title="Homepage">Homepage</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/archives" title="By Year">By Year</a>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="https://github.com/denjones/hexo-theme-chan" title="Chan" target="_blank" rel="noopener">Chan</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="https://github.com/denjones" title="Github" target="_blank" rel="noopener">Github</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/atom.xml" title="RSS">RSS</a>
+              </li>
+            
+          
+        </ul>
+      
     
+  </div>
 </div>
 
-    <div id="primary">
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <h1>DNS服务器搭建</h1>
+
+
+  
+  
+    <div class="post-list">
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/08/14/DNSmasq域名服务器搭建/">
+  DNS服务器搭建
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/08/14/DNSmasq域名服务器搭建/"><span class="article-date">
+  2019-08-14
+</span>
+</a>
         
+	<span class="article-category tagcloud">
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/centos/">centos</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/centos/DNS服务器搭建/">DNS服务器搭建</a></li></ul></li></ul>
+	</span>
+
+
+        
+	<span class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DNS服务器搭建/">DNS服务器搭建</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+	</span>
+
+
+      </div>
+      <div class="article-entry">
+        
+          <h1 id="DNS服务器搭建"><a href="#DNS服务器搭建" class="headerlink" title="DNS服务器搭建"></a>DNS服务器搭建</h1><p>DNSmasq是一个小巧且方便地用于配置DNS和DHCP的工具，适用于小型网络。作为域名解析服务器(DNS)，dnsmasq可以通过<br>缓存DNS来提高对同一网址的访问速度。作为DHCP服务器，dnsmasq可以用于为局域网主机分配内网ip地址、提供路由功能。<br>DNS和DHCP两个功能可以同时或分别单独实现。dnsmasq轻量且易配置，适用于个人用户或少于50台主机的网络，更适用于虚<br>拟化和大数据环境的部署。此外它还自带了一个PXE服务器。</p>
+<p>下载地址：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://www.thekelleys.org.uk/dnsmasq/</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-下载安装"><a href="#1-下载安装" class="headerlink" title="1.下载安装"></a>1.下载安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install dnsmasq</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-配置dnsmasq"><a href="#2-配置dnsmasq" class="headerlink" title="2.配置dnsmasq"></a>2.配置dnsmasq</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/dnsmasq.conf</span><br><span class="line">修改或添加下列内容：</span><br><span class="line">resolv-file=/etc/resolv.dnsmasq.conf</span><br><span class="line">strict-order</span><br><span class="line">listen-address=192.168.122.131,127.0.0.1</span><br><span class="line">addn-hosts=/etc/dnsmasq.hosts</span><br><span class="line">cache-size=100</span><br><span class="line">bogus-nxdomain=223.5.5.5</span><br><span class="line">log-queries</span><br><span class="line">log-facility=/var/log/dnsmasq.log</span><br></pre></td></tr></table></figure>
+
+<p>开启dnsmasq日志切割</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">cat &gt;/etc/logrotate.d/dnsmasq &lt;&lt;-EOF</span><br><span class="line">/var/log/dnsmasq.log &#123;</span><br><span class="line">        daily</span><br><span class="line">        copytruncate</span><br><span class="line">        missingok</span><br><span class="line">        rotate 3</span><br><span class="line">        compress</span><br><span class="line">        notifyempty</span><br><span class="line">        dateext</span><br><span class="line">        size 30M</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-编辑-etc-resolv-dnsmasq-conf文件并添加上游DNS服务器地址"><a href="#3-编辑-etc-resolv-dnsmasq-conf文件并添加上游DNS服务器地址" class="headerlink" title="3.编辑/etc/resolv.dnsmasq.conf文件并添加上游DNS服务器地址"></a>3.编辑/etc/resolv.dnsmasq.conf文件并添加上游DNS服务器地址</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &apos;nameserver 223.5.5.5&apos; &gt; /etc/resolv.dnsmasq.conf</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-创建dnsmasq-hosts文件"><a href="#4-创建dnsmasq-hosts文件" class="headerlink" title="4.创建dnsmasq.hosts文件"></a>4.创建dnsmasq.hosts文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp /etc/hosts /etc/dnsmasq.hosts</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-启动dnsmasq"><a href="#5-启动dnsmasq" class="headerlink" title="5.启动dnsmasq"></a>5.启动dnsmasq</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl start dnsmasq</span><br><span class="line">systemctl enable dnsmasq</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-检测服务是否开启"><a href="#6-检测服务是否开启" class="headerlink" title="6.检测服务是否开启"></a>6.检测服务是否开启</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -tlunp | grep dnsmasq</span><br></pre></td></tr></table></figure>
+
+<h2 id="dnsmasq性能优化"><a href="#dnsmasq性能优化" class="headerlink" title="dnsmasq性能优化"></a>dnsmasq性能优化</h2><p>我们都知道Bind不配合数据库的情况下，经常需要重新载入并读取配置文件，这是造成性能低下的原因。根据这点教训，我们可以考虑不读取/etc/hosts文件。而是另外指定一个在共享内存里的文件,如/dev/shm/dnsrecord.txt ，这样就不费劲了，又由于内存的非持久性，重启就消失，可以定期同步硬盘上的某个内容到内存文件中。</p>
+<p>具体实现步骤如下：    </p>
+<h3 id="a-配置dnsmasq"><a href="#a-配置dnsmasq" class="headerlink" title="a.配置dnsmasq"></a>a.配置dnsmasq</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/dnsmasq.conf </span><br><span class="line">no-hosts </span><br><span class="line">addn-hosts=/dev/shm/dnsrecord.txt</span><br></pre></td></tr></table></figure>
+
+<h3 id="b-解决同步问题"><a href="#b-解决同步问题" class="headerlink" title="b.解决同步问题"></a>b.解决同步问题</h3><h1 id="开机启动"><a href="#开机启动" class="headerlink" title="开机启动"></a>开机启动</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;cat /etc/hosts &gt; /dev/shm/dnsrecord.txt&quot; &gt;&gt; /etc/rc.local</span><br></pre></td></tr></table></figure>
+
+<h1 id="定时同步内容"><a href="#定时同步内容" class="headerlink" title="定时同步内容"></a>定时同步内容</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &apos;*/10 * * * * root /usr/bin/cat /etc/hosts &gt; /dev/shm/dnsrecord.txt&apos; &gt;&gt; /etc/crontab</span><br><span class="line">systemctl restart crond</span><br></pre></td></tr></table></figure>
+
+<p>Dnsmasq选择最快的上游DNS服务器<br>​    经常会有这样的情景，Dnsmasq服务器配了一堆上游服务器，转发本地的dns请求，缺省是Dnsmasq事实上是只挑了一个上游dns服务器来查询并转发结果，这样如果选错服务器的话会导致DNS响应变慢。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/dnsmasq.conf</span><br><span class="line"></span><br><span class="line">all-servers  </span><br><span class="line">server=223.5.5.5</span><br><span class="line">server=114.114.114.114</span><br></pre></td></tr></table></figure>
+
+<p>all-servers表示对以下设置的所有server发起查询，选择回应最快的一条作为查询结果返回。<br>上面设置了两个dns server，收到解析请求会同时查询这两个服务器，询问dns地址谁返回快就采用谁的结果。</p>
+<p>技术参考：<br><a href="https://www.hi-linux.com/posts/30947.html" target="_blank" rel="noopener">https://www.hi-linux.com/posts/30947.html</a><br><a href="https://www.cnblogs.com/wclwcw/p/8806256.html" target="_blank" rel="noopener">https://www.cnblogs.com/wclwcw/p/8806256.html</a></p>
+
+        
+      </div>
     </div>
-    
+
+  
+    </div>
+  
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2020 bibi - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
 </div>
-<div id="preview"></div>
 
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 
-</body>
-<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
-<script src="/js/plugin.js"></script>
-<script src="/js/diaspora.js"></script>
-<link rel="stylesheet" href="/photoswipe/photoswipe.css">
-<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
-<script src="/photoswipe/photoswipe.min.js"></script>
-<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
 
-<!-- Root element of PhotoSwipe. Must have class pswp. -->
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-    <!-- Background of PhotoSwipe. 
-         It's a separate element as animating opacity is faster than rgba(). -->
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
     <div class="pswp__bg"></div>
+
     <!-- Slides wrapper with overflow:hidden. -->
     <div class="pswp__scroll-wrap">
-        <!-- Container that holds slides. 
-            PhotoSwipe keeps only 3 of them in the DOM to save memory.
-            Don't modify these 3 pswp__item elements, data is added later on. -->
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
         </div>
-        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-        <div class="pswp__ui pswp__ui--hidden">
-            <div class="pswp__top-bar">
-                <!--  Controls are self-explanatory. Order can be changed. -->
-                <div class="pswp__counter"></div>
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                <button class="pswp__button pswp__button--share" title="Share"></button>
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-                <!-- element will get class pswp__preloader--active when preloader is running -->
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                      <div class="pswp__preloader__cut">
-                        <div class="pswp__preloader__donut"></div>
-                      </div>
-                    </div>
-                </div>
-            </div>
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div> 
-            </div>
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
         </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
 
 
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
 
-
+</body>
 </html>
